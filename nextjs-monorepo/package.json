@@ -1,0 +1,11 @@
+{
+  "name": "nextjs-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rob Wilson",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
