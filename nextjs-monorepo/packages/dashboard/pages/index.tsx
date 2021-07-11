@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useDebounce } from "@myapp/hooks";
 import styles from "../styles/Home.module.css";
@@ -8,7 +7,7 @@ export default function Home() {
   const [mouseOnFirstBox, setMouseOnFirstBox] = useState(false);
   const [mouseOnSecondBox, setMouseOnSecondBox] = useState(false);
   const [firstBoxText, setFirstBoxText] = useState("NOT hovering");
-  const [seconfBoxText, setSecondBoxText] = useState(
+  const [secondBoxText, setSecondBoxText] = useState(
     "NOT hovering (debounced)"
   );
 
@@ -49,7 +48,7 @@ export default function Home() {
           onMouseEnter={() => setMouseOnSecondBox(true)}
           onMouseLeave={() => setMouseOnSecondBox(false)}
         >
-          <h1>{seconfBoxText}</h1>
+          <h1>{secondBoxText}</h1>
         </div>
       </main>
     </div>
