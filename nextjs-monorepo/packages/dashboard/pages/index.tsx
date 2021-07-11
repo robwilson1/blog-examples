@@ -34,7 +34,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>No Debounce:</h1>
         <div
           className={styles.box}
           onMouseEnter={() => setMouseOnFirstBox(true)}
