@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchProfile,
-  selectProfile
-} from '../redux/profileSlice';
+import React from 'react';
+import useProfile from '../hooks/useProfile';
+
 
 function Homepage() {
-  const { data, error, isFetching } = useSelector(selectProfile) || {};
-  const [hasFetched, setHasFetched] = useState(false);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!hasFetched) {
-      dispatch(fetchProfile());
-      setHasFetched(true);
-    }
-  }, [hasFetched, dispatch]);
+  const { data, error, isValidating } = useProfile();
 
   return (
     <div>
-      { isFetching
+      { isValidating
         ? <p>Fetching...</p>
         : null
       }
